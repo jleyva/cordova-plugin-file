@@ -72,6 +72,7 @@ module.exports = {
     // use the public remove/removeRecursively API instead.
     drop: function(win, fail) {
         if (!this.db) {
+            fail();
             return;
         }
 
@@ -88,6 +89,7 @@ module.exports = {
 
     get: function(fullPath, win, fail) {
         if (!this.db) {
+            fail();
             return;
         }
 
@@ -103,6 +105,7 @@ module.exports = {
 
     getAllEntries: function(fullPath, win, fail) {
         if (!this.db) {
+            fail();
             return;
         }
 
@@ -162,6 +165,7 @@ module.exports = {
 
     delete: function(fullPath, win, fail) {
         if (!this.db) {
+            fail();
             return;
         }
 
@@ -175,6 +179,7 @@ module.exports = {
 
     put: function(entry, win, fail) {
         if (!this.db) {
+            fail();
             return;
         }
 

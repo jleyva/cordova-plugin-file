@@ -33,9 +33,9 @@ var cordova = require('cordova'),
  */
 Entry.prototype.getMetadata = function(win, fail) {
     if (this.isFile) {
-        return { "status": cordova.callbackStatus.OK, "message": new Metadata(this.file_.lastModifiedDate, this.file_.size) }
+        win( new Metadata(this.file_.lastModifiedDate, this.file_.size) );
     } else {
-        return { "status": cordova.callbackStatus.INVALID_ACTION, "message": "getMetadata() not implemented for DirectoryEntry" }
+        fail("getMetadata() not implemented for DirectoryEntry");
     }
 };
 
